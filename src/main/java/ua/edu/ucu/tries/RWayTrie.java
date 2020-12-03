@@ -5,9 +5,10 @@ import ua.edu.ucu.immutable.Queue;
 import java.util.ArrayList;
 
 public class RWayTrie implements Trie {
-    private static final Integer R = 26;
-    private final int MIN_WORD_LENGTH = 2;
     private static Node root;
+    private static final Integer R = 26;
+
+    private final int MIN_WORD_LENGTH = 2;
     private int length;
 
     public RWayTrie() {
@@ -61,7 +62,11 @@ public class RWayTrie implements Trie {
 
     @Override
     public boolean delete(String word) {
-        if (word.length() <= MIN_WORD_LENGTH || size() == 0 || !contains(word)) {
+        if (word.length() <= MIN_WORD_LENGTH) {
+            return false;
+        }
+
+        if (size() == 0 || !contains(word)) {
             return false;
         }
 
