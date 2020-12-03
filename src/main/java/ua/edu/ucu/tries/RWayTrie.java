@@ -65,7 +65,6 @@ public class RWayTrie implements Trie {
         if (word.length() <= MIN_WORD_LENGTH) {
             return false;
         }
-
         if (size() == 0 || !contains(word)) {
             return false;
         }
